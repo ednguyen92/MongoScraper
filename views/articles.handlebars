@@ -1,21 +1,45 @@
-
-  <div class="row">
-          {{#each dbArticle}}
-          {{#unless saved}}
+<div class="row">
+    {{#each dbArticle}} {{#if saved}}
     <div class="col s12">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-        <a href="{{link}}">{{title}}</a>
-                <form action="/articles/save/{{id}}" method="POST">
-                  <input name="saved" type="hidden">
-                  <button class="modal-close waves-effect waves-light btn-flat" type="submit">Save Article</button>
+        <div class="card teal">
+            <div class="card-content white-text">
+                <h4>{{title}}</h4>
+                <form action="/unsaved/{{id}}" method="POST">
+                    <input name="saved" type="hidden">
+                    <button class="modal-close waves-effect waves-light btn-flat teal lighten-3" type="submit">Delete from Saved</button>
                 </form>
+                <br>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Note</a>
+            </div>
+            <div class="card-action">
+                <p>{{summary}}</p>
+            </div>
         </div>
-        <div class="card-action">
-          <p>{{summary}}</p>
-        </div>
-      </div>
     </div>
-    {{/unless}}
-        {{/each}}
-  </div>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+
+            <h4>Notes</h4>
+            {{#each dbNote}}
+            <h4>Hello</h4>
+            {{body}}
+            {{/each}}
+            <form action="/articles/{{id}}" method="POST">
+                <input name="title" type="text" placeholder="Note Title">
+                <input name="body" type="text" placeholder="Note">
+                <button class="modal-close waves-effect waves-light btn-flat teal lighten-3" type="submit">Save Note</button>
+            </form>
+
+
+        </div>
+    </div>
+    {{/if}} {{/each}}
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.modal').modal();
+    });
+</script>
