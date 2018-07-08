@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Link main CSS file -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<title>Mongo Scrapper!</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+	<!-- Dropdown Structure -->
+  <nav>
+    <div class="nav-wrapper teal lighten-3">
+      <a href="/" class="brand-logo">Mongo Scraper</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/articles/saved">Saved Articles</a></li>
+        <li><a href="/scrape">Scrape New Articles</a></li>
+        <li><a href="/clearAll">Clear Articles</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+    <div class="col s12">
+      <div class="card card-game">
+        <div class="card-image">
+          <img class="jumbotron-card" src="assets/imgs/game-background.jpg">
+          <span class="card-title">GameSpot Edition</span>
+        </div>
+      </div>
+    </div>
+	{{{ body }}}
+</body>
+
+</html>

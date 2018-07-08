@@ -1,0 +1,21 @@
+
+  <div class="row">
+          {{#each dbArticle}}
+    <div class="col s12">
+      <div class="card teal">
+        <div class="card-content white-text">
+        <h4>{{title}}</h4>
+                <form action="/articles/save/{{id}}" method="POST">
+                  <input name="saved" type="hidden">
+                  <button class="modal-close waves-effect waves-light btn-flat teal lighten-3" type="submit">Save Article</button>
+                </form>
+                <br>
+            <a href="{{link}}"><button class="modal-close waves-effect waves-light btn-flat teal lighten-3" type="submit">Read Article</button></a>
+        </div>
+        <div class="card-action">
+          <p>{{summary}}</p>
+        </div>
+      </div>
+    </div>
+        {{/each}}
+  </div>
